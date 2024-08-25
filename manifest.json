@@ -1,0 +1,68 @@
+{
+    "manifest_version": 3,
+    "name": "Junkipal",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting",
+        "webRequest"
+      ],
+      "background": {
+        "service_worker": "background.js"
+      },
+      "content_scripts": [
+        {
+                  
+
+          "matches": ["https://*.x.com/*", 
+          "https://*.twitter.com/*", 
+          "https://*.rumble.com/*", 
+          "https://*.bitchute.com/channel/*",
+          "https://*.facebook.com/*",
+          "https://*.youtube.com/*",
+          "https://*.instagram.com/*",
+          "https://*.tiktok.com/@*",
+          "https://*.gettr.com/*",
+          "https://*.gab.com/*",
+          "https://*.ok.ru/*",
+          "https://*.parler.com/*",
+          "https://*.substack.com/*",
+          "https://*.t.me/*",
+          "https://*.threads.net/@*",
+          "https://*.truthsocial.com/*",
+          "https://*.vk.com/*",
+
+          
+          "https://www.junkipedia.org/*"],
+          "js": ["content.js"]
+        }
+      ],
+      "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+          "16": "icon16.png",
+          "48": "icon48.png",
+          "128": "icon128.png"
+        }
+      },
+      "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      },
+      "content_security_policy": {
+        "extension_pages": "default-src 'self'; connect-src https://* data: blob: filesystem:;"
+      },
+      "host_permissions": [
+        "<all_urls>"
+      ],
+      "web_accessible_resources": [
+        {
+          "resources": [ "images/*", "*.css" ],
+          "matches": [
+            "https://www.junkipedia.org/*"
+          ]
+        }
+      ]
+    }
